@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read </title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<style>
+    @font-face {
+        font-family: "bb";
+        src: url(/bb.woff2);
+    }
+
+    body {
+        background-image: url(https://i.pinimg.com/236x/01/23/58/01235842ae6fda5c2dc0b2a7a288a2ba.jpg);
+        background-size: cover;
+        letter-spacing: 3px;
+    }
+
+    .navbar {
+        background-color: rgba(124, 158, 253, 0.301);
+        box-shadow: 1px 2px 3px rgba(250, 235, 215, 0.534);
+        padding: 11px 150px;
+        font-size: 30px;
+        color: rgb(27, 27, 151);
+        font-weight: 600;
+    }
+
+    .gap a {
+        margin-left: 22px;
+    }
+
+
+    a:hover {
+        text-decoration: none !important;
+        color: rgb(209, 236, 203);
+    }
+
+    .containerp {
+        background-image: url(https://i.pinimg.com/564x/18/1f/89/181f89c11ac456b4728d7cbbb34fe53a.jpg);
+        font-family: 'bb';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1880px;
+        width: 100%;
+        background-size: cover;
+        flex-wrap: wrap;
+    }
+
+
+
+    .box {
+        display: flex;
+        height: auto;
+        width: 100%;
+        padding: 10px 44px;
+        margin: 10px 50px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .card {
+        background-image: url(https://i.pinimg.com/236x/23/92/74/2392748bfbcd61380b2162b04d48c4ea.jpg);
+        background-size: cover;
+
+    }
+
+    .boot a {
+        font-size: 23px;
+        letter-spacing: 2px !important;
+    }
+
+    .bt2 {
+        color: rgb(49, 4, 13);
+    }
+
+
+    .read {
+        color: crimson;
+    }
+</style>
+
+<body>
+    <navbar class="navbar">
+        <a href="#">Navbar</a>
+        <div class="gap">
+            <a href="/">Home</a>
+            <a href="/read">Cards</a>
+        </div>
+    </navbar>
+
+    <div class="containerp">
+        <div class="box">
+            <h1 class="text-5xl read mb-7  tracking-tighter mb-4">Read User</h1>
+            <div class="users flex flex-wrap gap-4">
+                <% users.forEach(user=>{ %>
+                    <div class="user w-72 card p-3 rounded-lg">
+                        <div class="w-full h-72 rounded-lg bg-zinc-700">
+                            <img class="w-full h-full object-cover object-top" src="<%= user.image %>" alt="">
+                        </div>
+                        <h3 class="text-2xl mt-3">
+                            <%= user.name %>
+                        </h3>
+                        <h5 class="text-zinc-300">
+                            <%= user.email %>
+                        </h5>
+                        <div class="flex gap-5 mt-3 boot">
+                            <a class="bt1" href="/edit/<%= user._id %>">Edit User</a>
+                            <a class="bt2" href="/delete/<%= user._id %>">Delete User</a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

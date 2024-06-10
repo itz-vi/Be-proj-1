@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit </title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<style>
+    body {
+        background-image: url(https://i.pinimg.com/236x/4b/03/4e/4b034e90639822135544e5c7f81df769.jpg);
+        background-size: cover;
+
+    }
+
+    .navbar {
+        background-color: rgba(255, 255, 255, 0.322);
+        box-shadow: 1px 2px 3px rgba(250, 235, 215, 0.534);
+        padding: 11px 110px;
+        font-size: 30px;
+        color: rgb(30, 58, 179);
+        font-weight: 600;
+    }
+
+    a:hover {
+        text-decoration: none !important;
+        color: rgb(209, 236, 203);
+
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 72px;
+
+    }
+
+    .nonb {
+        font-family: 'bb';
+        color: rgb(4, 13, 63);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 440px;
+        height: 500px;
+        line-height: 12px;
+        background: rgba(35, 15, 143, 0.082);
+        box-shadow: 2px 16px 42px 0 rgba(216, 217, 221, 0.521);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border-radius: 10px;
+        border: 2px solid rgba(19, 4, 4, 0.301)
+    }
+
+    form {
+        margin-bottom: 33px;
+    }
+
+    form input {
+        margin-bottom: 20px;
+
+    }
+
+    .doj {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 13px;
+
+    }
+
+    input {
+
+        border: 2px solid #ffffff;
+        outline: none;
+        border-radius: 8px;
+        margin: 5px 0;
+        color: white;
+        font-size: 22px !important;
+
+    }
+
+    input::placeholder {
+        color: #060f8bf3 !important;
+
+    }
+</style>
+
+<body>
+    <navbar class="navbar">
+        <a href="#">Navbar</a>
+        <div>
+            <a href="/">Home</a>
+            <a href="/read">Cards</a>
+        </div>
+    </navbar>
+
+
+
+    <div class="box">
+        <div class="nonb p-10">
+            <h1 class="text-3xl mb-4">Update User</h1>
+            <div class="doj">
+                <form action="/update/<%= user._id %>" method="post">
+                    <input class="px-4 py-2 bg-transparent border-2  outline-none rounded-lg" type="text" name="name"
+                        placeholder="name" value="<%= user.name %>">
+                    <input class="px-4 py-2 bg-transparent border-2  outline-none rounded-lg" type="text" name="email"
+                        placeholder="email" value="<%= user.email %>">
+                    <input class=" px-4 py-2 bg-transparent border-2  outline-none rounded-lg" type="text" name="image"
+                        placeholder="image url" value="<%= user.image %>">
+                    <input class="px-5 py-3 bg-teal-500 text-black rounded-lg ml-14" type="submit" value="Update user">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

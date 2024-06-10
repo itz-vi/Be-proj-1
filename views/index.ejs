@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "bb";
+            src: url(/bb.woff2);
+        }
+
+        body {
+            background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            background-size: cover;
+
+            letter-spacing: 5px;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.322);
+            box-shadow: 1px 2px 3px rgba(250, 235, 215, 0.534);
+            padding: 11px 110px;
+            font-size: 30px;
+            color: rgb(233, 189, 233);
+            font-weight: 600;
+        }
+
+
+
+        a:hover {
+            text-decoration: none !important;
+            color: rgb(209, 236, 203);
+
+        }
+
+        .containerp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px;
+        }
+
+        .box {
+            font-family: 'bb';
+            color: lemonchiffon;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 400px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.151);
+            box-shadow: 2px 16px 42px 0 rgba(216, 217, 221, 0.521);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.014)
+        }
+
+        .box h1 {
+            margin-bottom: 25px;
+            font-size: 62px;
+            color: rgb(226, 254, 255);
+            font-family: "bb";
+        }
+
+        .dom form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 3px 6px;
+            margin-bottom: 13px;
+            gap: 11px;
+        }
+
+        .card-containerp {
+            width: 400px;
+            height: 500px;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+
+        .card .front-content {
+            background-image: url(https://i.pinimg.com/564x/38/83/d2/3883d23846a6925fb9f3f6f67aa7ebcd.jpg);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .card .front-content p {
+            font-size: 62px;
+            font-weight: 700;
+            position: absolute;
+            top: -3%;
+            left: 5%;
+
+
+        }
+
+        .card .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+            color: #e8e8e8;
+            padding: 20px;
+            line-height: 1.5;
+            border-radius: 5px;
+            transform: translateY(100%);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .card .content .heading {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .card:hover .content {
+            transform: translateY(0);
+        }
+
+        .card:hover .front-content p {
+            opacity: 0;
+        }
+
+        input {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #9b35fa, #0c2e50);
+            border: 2px solid #ffffff;
+            outline: none;
+            border-radius: 8px;
+            margin: 5px 0;
+            color: white;
+            font-size: 24px !important;
+
+        }
+
+        input::placeholder {
+            color: #fffffff3 !important;
+            font-size: 25px;
+
+            /* A lighter white for placeholders */
+        }
+
+        .button2 {
+            display: inline-block;
+            transition: all 0.2s ease-in;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            margin-top: 22px;
+            color: #090909;
+            padding: 0.7em 1.7em;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 0.5em;
+            background: #e8e8e8;
+            border: 1px solid #e8e8e8;
+            box-shadow: 6px 6px 12px #c5c5c5d7, 6px 6px 12px #ffffffbd;
+        }
+
+        .button2:active {
+            color: #666;
+            box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+        }
+
+        .button2:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.25);
+            top: 100%;
+            width: 140%;
+            height: 180%;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+        }
+
+        .button2:after {
+            content: "";
+            position: absolute;
+            left: 55%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.45);
+            top: 180%;
+            width: 160%;
+            height: 190%;
+            background-color: #009087;
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+        }
+
+        .button2:hover {
+            color: #ffffff;
+            border: 1px solid #009087;
+        }
+
+        .button2:hover:before {
+            top: -35%;
+            background-color: #009087;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+        }
+
+        .button2:hover:after {
+            top: -45%;
+            background-color: #009087;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <navbar class="navbar">
+        <a href="#">Navbar</a>
+        <div>
+            <a href="/">Home</a>
+            <a href="/read">Cards</a>
+        </div>
+    </navbar>
+
+    <div class="containerp">
+        <div class="box">
+            <div class="card-containerp">
+                <div class="card">
+                    <div class="front-content">
+                        <p>Hover me</p>
+                    </div>
+                    <div class="content">
+                        <h1>Create User</h1>
+                        <div class="dom">
+                            <form action="/create" method="post">
+                                <input class="px-4 py-2 bg-transparent border-2 outline-none rounded-lg" type="text"
+                                    name="name" placeholder="Name">
+                                <input class="px-4 py-2 bg-transparent border-2 outline-none rounded-lg" type="email"
+                                    name="email" placeholder="Email">
+                                <input class="px-4 py-2 bg-transparent border-2 outline-none rounded-lg" type="text"
+                                    name="image" placeholder="Image URL">
+                                <button class="button2">Create User</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
